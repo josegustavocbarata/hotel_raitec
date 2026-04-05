@@ -15,11 +15,6 @@ class Booking:
         self._active= False
         self._checkin = checkin
         self._checkout = checkout
-        dailys = (checkout - checkin).days
-        if dailys <= 0:
-          self._total_expense = 1* self._room.get_daily_price()
-        else:
-          self._total_expense = dailys*self._room.get_daily_price()
     
     #getters
     def get_id(self):
@@ -36,9 +31,6 @@ class Booking:
     
     def get_checkout(self):
         return self._checkout
-
-    def get_total_expense(self) -> float:
-        return self._total_expense
     
     def get_active(self):
         return self._active
