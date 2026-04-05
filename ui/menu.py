@@ -48,15 +48,22 @@ def fmt_booking(b: dict) -> str:
     checkout = b.get('checkout')
     checkin_str = checkin.strftime("%d/%m/%Y") if checkin else "?"
     checkout_str = checkout.strftime("%d/%m/%Y") if checkout else "?"
-    
+    total_str = "?"
+    if checkin and checkout and b.get('daily_price') is not None:
+        diarias = (checkout - checkin).days
+        if diarias <= 0:
+            diarias = 1
+        total = diarias * float(b.get('daily_price'))
+        total_str = f"R$ {total:.2f} ({diarias}x diária)"
+        
     return (
         f"  ID: {b.get('id')} | "
         f"Cliente: {b.get('client_name', b.get('client_cpf'))} | "
         f"Quarto: {b.get('room_number')} | "
         f"Entrada: {checkin_str} | "
         f"Saída: {checkout_str} | "
+        f"Valor Total: {total_str} |"
         f"Status: {status}"
-        f"Valor Total: {b.get('total_expense')}"
     )
 
 def fmt_room(r: dict) -> str:
