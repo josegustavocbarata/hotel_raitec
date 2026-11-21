@@ -2,7 +2,7 @@
 
 Sistema de gerenciamento de hotel em Python, com menu interativo, organizado em camadas (models, repository, controllers e ui). Permite cadastrar quartos e clientes, criar reservas e controlar o fluxo de check-in e check-out.
 
-<!-- TODO: adicione 1 ou 2 frases sobre o contexto do projeto (disciplina, cliente, objetivo) -->
+Projeto feito para o processo seletivo do grupo RAITec (robótica, automação, inteligência artificial e tecnologias).
 
 ## Funcionalidades
 
@@ -82,12 +82,6 @@ O arquivo `teste.py` executa o fluxo completo diretamente no `HotelController`:
 ```bash
 python teste.py
 ```
-
-> ⚠️ O script grava dados de exemplo (quartos, clientes e reservas). Rode-o em um ambiente de desenvolvimento, não em dados reais.
-
-## Segurança
-
-- Não versione senhas, tokens ou arquivos `.env`; mantenha-os no `.gitignore`.
 
 ## Autor
 
